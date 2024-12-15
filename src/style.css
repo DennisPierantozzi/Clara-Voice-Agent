@@ -1,0 +1,63 @@
+* {
+    font-family: "Lato", sans-serif;
+    padding-left: 20px;
+}
+
+.purple {
+    color: #5e17eb;
+}
+
+.gray {
+    color: #ceced7;
+}
+
+.secondGray {
+    color: #bebebe;
+}
+
+.callBox {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.callList {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.flexBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-content: start;
+    padding: 0px;
+}
+
+.callFeature {
+    background-color: #cabced;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.callCost {
+    display: flex;
+    justify-content: end;
+    color: darkgray;
+}
+
+.callSummary {
+    text-align: justify;
+    margin-top: 5px;
+    width: 80vw;
+}
+
+.boxInCall {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
