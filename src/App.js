@@ -46,6 +46,8 @@ const App = () => {
     fetchCalls();
   }, []); // Empty dependency array means this runs once when the component mounts
 
+  if (loading) return <p>Loading calls...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
@@ -70,11 +72,11 @@ const App = () => {
       
             
               {call.structuredData != null && 
-              <div className="boxInCall">
-              <span color="graySecond">Client name: {call.structuredData.client_name} </span><br></br>
-              <span>Accomodation requested: {call.structuredData.accomodation_requested} </span><br></br>
-              <span>Appointment requested: {call.structuredData.appointment_date} at {call.structuredData.appointment_time} </span><br></br>
-              <span>Call notes: {call.structuredData.notes } </span><br></br>
+              <div className="boxInCall flexBoxVertical">
+              <span className="callData">Client name: {call.structuredData.client_name} </span>
+              <span className="callData">Accomodation requested: {call.structuredData.accomodation_requested} </span>
+              <span className="callData">Appointment requested: {call.structuredData.appointment_date} at {call.structuredData.appointment_time} </span>
+              <span className="callData">Call notes: {call.structuredData.notes } </span>
               </div>
               }
               
