@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import './style.css';  // Import the CSS file
 import { VapiClient } from "@vapi-ai/server-sdk";
 
+const VAPI_KEY = process.env.REACT_APP_VAPI_PRIVATE_KEY;
+
+
 const App = () => {
 
   const [loading, setLoading] = useState(true); // State for loading indicator
@@ -15,7 +18,7 @@ const App = () => {
 
 
         // Create the VapiClient instance with the token
-        const client = new VapiClient({ token: "0e69d7ab-b3bb-4dad-b5ed-f227c5a85b22" });
+        const client = new VapiClient({ token: VAPI_KEY });
 
         // Fetch the list of calls
         const response = await client.calls.list();
