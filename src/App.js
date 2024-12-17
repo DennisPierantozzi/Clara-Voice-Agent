@@ -20,6 +20,7 @@ const App = () => {
         // Fetch the list of calls
         const response = await client.calls.list();
 
+
         const extractedData = response.map(call => ({
           id: call.id,
           startedAt: call.startedAt,
@@ -30,7 +31,10 @@ const App = () => {
           endedReason: call.endedReason,
           summary: call.analysis?.summary || "No summary available",
           structuredData: call.analysis?.structuredData || null
-        }));
+        }
+      ));
+
+        console.log(extractedData[0].costBreakdown);
 
         // Update the state with the extracted data
         setCalls(extractedData);
@@ -76,8 +80,8 @@ const App = () => {
               <span className="callData">Client name: {call.structuredData.client_name} </span>
               <span className="callData">Accomodation requested: {call.structuredData.accomodation_requested} </span>
               <span className="callData">Appointment requested: {call.structuredData.appointment_date} at {call.structuredData.appointment_time} </span>
-              <span className="callData">Call notes: {call.structuredData.notes } </span>
-              </div>
+{/*               <span className="callData">Call notes: {call.structuredData.notes } </span>
+ */}              </div>
               }
               
               <div className="boxInCall">
@@ -86,7 +90,7 @@ const App = () => {
               </div>
 
               <div className="callCost">
-                {call.costBreakdown.analysisCostBreakdown.summary} $
+                {call.costBreakdown.total} $
               </div>
             </li>
           ))}
